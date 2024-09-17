@@ -47,7 +47,7 @@
       margin-top: 20px;
     }
 
-    #dias, #horas, #minutos {
+    #dias, #horas, #minutos, #segundos {
       font-weight: 700;
       font-size: 36px;
       color: #f06d06;
@@ -80,7 +80,8 @@
     <div id="contador">
       <span id="dias">0</span> dias, 
       <span id="horas">0</span> horas, 
-      <span id="minutos">0</span> minutos
+      <span id="minutos">0</span> minutos, 
+      <span id="segundos">0</span> segundos
     </div>
     <footer>Parabéns! Continue firme! 🚀</footer>
   </div>
@@ -93,18 +94,20 @@
       const agora = new Date();
       const diff = agora - dataParada;
 
-      // Converter a diferença para dias, horas e minutos
+      // Converter a diferença para dias, horas, minutos e segundos
       const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
       const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
 
       // Atualizar o HTML
       document.getElementById('dias').textContent = dias;
       document.getElementById('horas').textContent = horas;
       document.getElementById('minutos').textContent = minutos;
+      document.getElementById('segundos').textContent = segundos;
     }
 
-    // Atualizar o contador a cada minuto
+    // Atualizar o contador a cada segundo
     setInterval(atualizarContador, 1000);
 
     // Iniciar o contador assim que a página carregar
