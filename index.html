@@ -47,7 +47,7 @@
       margin-top: 20px;
     }
 
-    #dias, #horas, #minutos, #segundos {
+    #dias, #horas, #minutos {
       font-weight: 700;
       font-size: 36px;
       color: #f06d06;
@@ -80,38 +80,35 @@
     <div id="contador">
       <span id="dias">0</span> dias, 
       <span id="horas">0</span> horas, 
-      <span id="minutos">0</span> minutos, 
-      <span id="segundos">0</span> segundos
+      <span id="minutos">0</span> minutos
     </div>
-    <footer>Parabéns! Continue firme! 🚀</footer>
+    <footer style="font-size: 30PX;"> CAPITAO EU DESISTO CAPITAO KKKKKKKKKKKKK 🚀</footer>
   </div>
 
   <script>
     // Data e hora em que o usuário parou de fumar
-    const dataParada = new Date(2024, 8, 20, 10, 0); // Mês 8 representa setembro, já que é indexado a partir de 0
+    const dataParada = new Date(2024, 8, 15, 14, 0); // Mês 8 representa setembro, já que é indexado a partir de 0
 
     function atualizarContador() {
       const agora = new Date();
       const diff = agora - dataParada;
 
-      // Converter a diferença para dias, horas, minutos e segundos
+      // Converter a diferença para dias, horas e minutos
       const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
       const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
 
       // Atualizar o HTML
       document.getElementById('dias').textContent = dias;
       document.getElementById('horas').textContent = horas;
       document.getElementById('minutos').textContent = minutos;
-      document.getElementById('segundos').textContent = segundos;
     }
 
-    // Atualizar o contador a cada segundo
-    setInterval(atualizarContador, 1000);
+    // // Atualizar o contador a cada minuto
+    // setInterval(atualizarContador, 1000);
 
-    // Iniciar o contador assim que a página carregar
-    atualizarContador();
+    // // Iniciar o contador assim que a página carregar
+    // atualizarContador();
   </script>
 </body>
 </html>
