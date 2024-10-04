@@ -1,3 +1,5 @@
+
+
 document.getElementById('loginForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
@@ -6,8 +8,30 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
   if (email && password) {
     // Aqui você pode adicionar uma chamada para a API de login
-    alert(`Login com sucesso! \nEmail: ${email}`);
+    window.location.href = "file:///C:/Users/joao.pereira/OneDrive%20-%20Conseiller%20IT&K/Documentos/cpt/washapp/servicos.html"
   } else {
     alert('Por favor, preencha os campos!');
+  }
+});
+
+
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  if (password !== confirmPassword) {
+    alert('As senhas não coincidem!');
+    return;
+  }
+
+  if (name && email && password && confirmPassword) {
+    // Aqui você pode adicionar a chamada para a API de cadastro
+    alert(`Cadastro realizado com sucesso! \nNome: ${name}\nEmail: ${email}`);
+  } else {
+    alert('Por favor, preencha todos os campos!');
   }
 });
